@@ -10,6 +10,7 @@ kubectl get pods -n _namespace_ | grep -i vpn                                   
 kubectl get pods rohit-pod --show-labels                                                          //show labels also
 kubectl get pod rohit-pod -o yaml                                                                 //get full pod info 
 kubectl get pod -o wide                                                                           //get pod ip,node ip
+kubectl get pods --all-namespaces | grep -i rohit                                                 //Find pod from all namespaces
 ```
 **Deployments**
 ```kube
@@ -71,16 +72,31 @@ Kubectl delete deployment deployment-name
 ```
 
 **SMALL QUIZ**
-**Create ns,pod,service** -- -- -- -- --
+
+**1. Create ns,pod,service**-- -- -- -- --
 ```bash
 kubectl create namespace rohit-ns
 kubectl run rohit-pod --image-nginx:alpine
-kubectl expose rohit-pod --port 80
+kubectl expose pod rohit-pod --port 80                                        //target port where public will hit
 kubectl edit svc rohit-pod
->type: NodePort
+>type: NodePort                                                           //node port from which it is exposed to public excess
 kubectl get svc -o wide 
 >get expose port
 kubectl get node -o wide 
 >get ip
 >Put the ip and port in browser
+```
+**2. Create a pod test-pod in namespace test-ns**
+```bash
+kubectl run test-pod --image:redis --restart=Never --dry-run -o yaml > pod.yaml
+vi pod.yaml
+> add namespace:test-ns  tag in metadata 
+kubectl apply -f pod.yaml
+```
+**3. Expose a deployment set name , nodeport, targetport** 
+```bash
+kubectl expose deployment test-deployment  --type=NodePort --target-port=8080 --name test-expose --dry-run -o yaml >svc.yaml
+vi svc.yaml
+>under the port set nodePort:30001
+kubectl apply -f svc.yaml
 ```
