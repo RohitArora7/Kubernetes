@@ -30,8 +30,9 @@ kubectl get nodes
 ```
 
 
-**Describe** 
+**Describe**_____________________________________ 
 ```bash
 Kubectl describe pod _podname_
 Kubectl describe deployments _deploymentname_ | grep -i image         //extract what image has been used
-...
+```
+
