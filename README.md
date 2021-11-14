@@ -36,3 +36,18 @@ Kubectl describe pod _podname_
 Kubectl describe deployments _deploymentname_ | grep -i image         //extract what image has been used
 ```
 
+**Create** 
+```bash
+kubectl run rohit-nginx --image=nginx:alpine                                       //create pod
+
+Kubectl create –f pod-definition.yml                                               //create deployment ,kubernetes pods  
+Kubectl apply  –f pod-definition.yml                                               //create deployment ,kubernetes , mainly with files 
+Kubectl create deployment _deploymentname_ --image=_imagename_                     //create deployment one line deployment creation 
+Kubectl apply  –f pod-definition.yml  --namespace=dev                              //create deployment in particular namespace 
+```
+
+**Edit** 
+```bash
+kubectl edit service _servicename_
+Kubectl edit pod _podname_ 
+```
