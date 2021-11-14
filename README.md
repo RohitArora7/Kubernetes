@@ -28,3 +28,10 @@ kubectl get rs -A
 ```kube
 kubectl get nodes
 ```
+
+
+**Describe** 
+```bash
+Kubectl describe pod _podname_
+Kubectl describe deployments _deploymentname_ | grep -i image         //extract what image has been used
+...
