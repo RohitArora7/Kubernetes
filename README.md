@@ -1,5 +1,5 @@
 # Kubernetes
-**Info**__________________________________________________________
+**Info**__________________________________________
 
 **Pods**
 ```bash
@@ -41,7 +41,7 @@ Kubectl describe pod _podname_
 Kubectl describe deployments _deploymentname_ | grep -i image                      //extract what image has been used
 ```
 
-**Create**__________________________________________________________
+**Create**________________________________________
 ```bash
 kubectl run rohit-nginx --image=nginx:alpine                                       //create pod
 
@@ -51,7 +51,7 @@ Kubectl create deployment _deploymentname_ --image=_imagename_                  
 Kubectl apply  –f pod-definition.yml  --namespace=dev                              //create deployment in particular namespace 
 ```
 
-**Edit**_________________________________________________________ 
+**Edit**__________________________________________
 ```bash
 kubectl edit service _servicename_
 Kubectl edit pod _podname_ 
