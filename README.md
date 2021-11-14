@@ -66,14 +66,14 @@ kubectl edit service _servicename_
 Kubectl edit pod _podname_ 
 ```
 
-**Delete** 
+**Delete**_________________________________________
 ```bash
 Kubectl delete deployment deployment-name
 ```
 
 **SMALL QUIZ**
 
-**1. Create ns,pod,service**-- -- -- -- --
+**1. Create ns,pod,service**
 ```bash
 kubectl create namespace rohit-ns
 kubectl run rohit-pod --image-nginx:alpine
