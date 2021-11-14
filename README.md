@@ -9,6 +9,7 @@ kubectl get pods -n _namespace_
 kubectl get pods -n _namespace_ | grep -i vpn                                                     //get vpn name pod from namespace
 kubectl get pods rohit-pod --show-labels                                                          //show labels also
 kubectl get pod rohit-pod -o yaml                                                                 //get full pod info 
+kubectl get pod -o wide                                                                           //get pod ip,node ip
 ```
 **Deployments**
 ```kube
