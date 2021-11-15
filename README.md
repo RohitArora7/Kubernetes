@@ -31,6 +31,7 @@ kubectl get svc --no-headers | wc -l                                            
 **Replica set**
 ```bash
 kubectl get rs -A
+kubectl scale deployment rohit-deployment --replicas=3
 ```
 **Nodes**
 ```kube
@@ -48,7 +49,7 @@ Kubectl describe deployments _deploymentname_ | grep -i image                   
 
 **Create**________________________________________
 ```bash
-kubectl run rohit-nginx --image=nginx:alpine                                       //create pod
+kubectl run rohit-nginx --image=nginx:alpine --labels=rohit-test                  //create pod
 
 Kubectl create –f pod-definition.yml                                               //create deployment ,kubernetes pods  
 Kubectl apply  –f pod-definition.yml                                               //create deployment ,kubernetes , mainly with files 
