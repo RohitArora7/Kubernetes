@@ -23,7 +23,7 @@ kubectl get deployments -n _namespace_
 kubectl get ns
 kubectl config set-context $(kubectl config current-context) --namespace=rohit-ns          //switch namespace
 ```
-**Services**
+### Services
 ```bash
 kubectl get svc -A
 kubectl get svc --no-headers | wc -l                                                    //no. of services 
