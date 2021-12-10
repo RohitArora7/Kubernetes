@@ -74,6 +74,7 @@ kubectl edit cm -n metallb-system config
 **Delete**_________________________________________
 ```bash
 Kubectl delete deployment deployment-name
+kubectl delete pods --all
 ```
 
 **SMALL QUIZ**
