@@ -66,6 +66,10 @@ kubectl expose pod rohit-pod --port                                             
 kubectl edit service _servicename_
 Kubectl edit pod _podname_ 
 ```
+```bash
+kubectl get cm -n metallb-system config -o yaml
+kubectl edit cm -n metallb-system config
+```
 
 **Delete**_________________________________________
 ```bash
