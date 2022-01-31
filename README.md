@@ -39,6 +39,10 @@ kubectl get nodes
 kubectl get node -o wide
 kubectl get node -o yaml
 ```
+**Jobs**
+```bash
+kubectl get jobs -A
+```
 
 
 **Describe**_____________________________________ 
