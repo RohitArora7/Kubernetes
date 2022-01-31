@@ -87,14 +87,19 @@ kubectl delete pods --all
 ```bash
 kubectl create namespace rohit-ns
 kubectl run rohit-pod --image-nginx:alpine
+
 kubectl expose pod rohit-pod --port 80                                        //target port where public will hit
+
 kubectl edit svc rohit-pod
 >type: NodePort                                                           //node port from which it is exposed to public excess
+
 kubectl get svc -o wide 
 >get expose port
+
 kubectl get node -o wide 
 >get ip
->Put the ip and port in browser
+
+>Put the Internal ip and port in browser 
 ```
 **2. Create a pod test-pod in namespace test-ns**
 ```bash
