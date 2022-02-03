@@ -79,6 +79,10 @@ kubectl edit cm -n metallb-system config
 ```bash
 Kubectl delete deployment deployment-name
 kubectl delete pods --all
+#delete all pods less than a month
+kubectl delete pod $(kubectl get pods --all-namespaces  | grep Evicted | awk '$6 > 30 {print $2}') -n $(kubectl get pods --all-namespaces  | grep Evicted | awk '$6 > 30 {print $1}')
+#For $NAMESPACE
+kubectl get pods -n $NAMESPACE | grep Evicted | awk '{print $1}' | xargs kubectl delete pod -n $NAMESPACE
 ```
 
 **SMALL QUIZ**
