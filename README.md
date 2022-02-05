@@ -47,12 +47,23 @@ kubectl get jobs -A
 ```bash
 kubectl get pvc -A
 ```
+**logs** 
+```bash
+kubectl logs podsname-n namespace
+```
+
+
+
 
 **Describe**_____________________________________ 
 ```bash
 Kubectl describe pod _podname_
 Kubectl describe deployments _deploymentname_ | grep -i image                      //extract what image has been used
+kubectl describe pods pods_name-n namespace_name
 ```
+
+
+
 
 **Create**________________________________________
 ```bash
@@ -67,6 +78,13 @@ kubectl create namespace rohit-ns                                               
 
 kubectl expose pod rohit-pod --port                                                //create service expose at 80 Cluster IP 
 ```
+
+
+
+
+
+
+
 
 **Edit**__________________________________________
 ```bash
