@@ -43,7 +43,10 @@ kubectl get node -o yaml
 ```bash
 kubectl get jobs -A
 ```
-
+**persistance volume claim**
+```bash
+kubectl get pvc -A
+```
 
 **Describe**_____________________________________ 
 ```bash
