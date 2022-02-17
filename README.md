@@ -114,6 +114,12 @@ kubectl delete pod $(kubectl get pods --all-namespaces  | grep Evicted | awk '$6
 kubectl get pods -n $NAMESPACE | grep Evicted | awk '{print $1}' | xargs kubectl delete pod -n $NAMESPACE
 ```
 
+More coammnds
+```bash
+kubectl top no
+kubectl top po
+```
+
 **SMALL QUIZ**
 
 **1. Create ns,pod,service**
@@ -148,3 +154,4 @@ vi svc.yaml
 >under the port set nodePort:30001
 kubectl apply -f svc.yaml
 ```
+
