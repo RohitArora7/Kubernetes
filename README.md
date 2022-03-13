@@ -118,6 +118,8 @@ More coammnds
 ```bash
 kubectl top no
 kubectl top po
+kubectl get configmaps postgres-config -n default -o yaml
+
 ```
 
 **SMALL QUIZ**
