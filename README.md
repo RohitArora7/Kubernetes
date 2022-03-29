@@ -83,6 +83,8 @@ Kubectl apply  –f pod-definition.yml  --namespace=dev                         
 kubectl create namespace rohit-ns                                                  //create namespace
 
 kubectl expose pod rohit-pod --port                                                //create service expose at 80 Cluster IP 
+kubectl expose pod rohit-pod --port=8000 --target-port=80 --name=rohit-service
+
 ```
 
 
@@ -114,13 +116,39 @@ kubectl delete pod $(kubectl get pods --all-namespaces  | grep Evicted | awk '$6
 kubectl get pods -n $NAMESPACE | grep Evicted | awk '{print $1}' | xargs kubectl delete pod -n $NAMESPACE
 ```
 
-More coammnds
+**More coammnds**
 ```bash
 kubectl top no
 kubectl top po
 kubectl get configmaps postgres-config -n default -o yaml
 
 ```
+kubernetes auto complete 
+```bash
+kubectl completion bash > kubecom.sh
+source $HOME/.kube/kubecom.sh
+```
+
+```bash
+kubectl explain pods|less
+kubectl explain pods --recursive|less
+```
+
+```bash
+kubectl  apply -f firstpod.yaml --server-dry-run
+kubectl diff -f firstpod.yaml
+```
+
+```bash
+kubectl exec -it postgresql-0 bash
+kubectl exec -it postgresql-0 env
+```
+
+```bash
+kubectl get pods -A -w
+```
+
+
 
 **SMALL QUIZ**
 
@@ -156,4 +184,18 @@ vi svc.yaml
 >under the port set nodePort:30001
 kubectl apply -f svc.yaml
 ```
+4. expose a cluster ip to 80 and access internally
+```bash
+kubectl expose pod rohit-pod --port=8000 --target-port=80 --name=rohit-service
+kubectl get svc
+curl IP:8000
+```
+5 expose a nodeport ip to 80 and access internally
+```bash
+kubectl expose pod rohit-pod --type=NodePort --port=8000 --target-port=80 --name=rohit-service
+kubectl get node
+chrome IP:listening port
+```
+
+
 
