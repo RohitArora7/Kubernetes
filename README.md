@@ -197,5 +197,25 @@ kubectl get node
 chrome IP:listening port
 ```
 
+NOTES
+```bash
+Imperative commands
+kubectl scale rc --replicas=2 replica_name
 
+Imperative object configuration
+Method A
+kubectl create -f rc_filename.yaml
+kubectl edit rc replica_name  //change the config
+Method B
+vi rc_filename.yaml
+kubectl replace -f rc_filename.yaml
+
+kubectl delete -f rc_filename.yaml  //delete all objects / pods 
+
+Declarative object configuration
+kubectl apply -f rc_filename.yaml
+vi rc_filename.yaml
+kubectl apply -f rc_filename.yaml
+
+```
 
