@@ -189,8 +189,10 @@ kubectl apply -f svc.yaml
 kubectl expose pod rohit-pod --port=8000 --target-port=80 --name=rohit-service
 kubectl get svc
 curl IP:8000
+
+//listing port is 8000 and then it redirect to 80 
 ```
-5 expose a nodeport ip to 80 and access internally
+5 expose a nodeport ip to 80 and access Externally
 ```bash
 kubectl expose pod rohit-pod --type=NodePort --port=8000 --target-port=80 --name=rohit-service
 kubectl get node
